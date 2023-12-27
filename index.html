@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Комплексный анализ</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/serif.css" id="theme">
+		<link rel="stylesheet" href="custom.css">
+		<!--<link rel="stilesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">-->
+		
+		
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+		<style>
+			.left{
+				float:left;
+			}
+			.right{
+				float:right;
+			}
+			.clear{
+				clear:both;
+			}
+			.tr{width: 20%; height:50%;}
+			#sub{
+				width: 40%; height:80%;background-color:rgb(157, 202, 176);font-size: 20pt;
+			}
+			#karp1{
+				width: 100%;
+			}
+			#karp2{
+				width: 70%;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-markdown class="center">
+					<script type="text/template">
+						Комплексный анализ
+						======
+					</script>
+				</section>
+				<section data-markdown class="center">
+					<script type="text/template">
+						### Комплексное число
+						Комплексным числом $\mathbb Z$ называется выражение вида: $a + bi$, 
+						где \\(a\\) и \\(b\\) - действительные числа, а символ \\(i^2 = -1\\). 
+						Число \\(a\\) - действительная часть, \\(bi\\) - мнимая часть, 
+						\\(i\\) - мнимая единица. \\(C\\) - множество комплексных чисел.
+					</script>
+				</section>
+				<section data-markdown class="center">
+					<script type="text/template">
+						## Как записываются комплексные числа?
+					</script>
+				</section>
+				<section data-markdown class="center">
+					<script type="text/template">
+						### Алгебраическая форма комплексного числа
+						Запись комплексного числа \\(z\\) в виде \\(z=a+bi\\), 
+						где \\(a\\) и \\(b\\) - действительные числа, 
+						называется алгебраической формой комплексного числа.
+					</script>
+				</section>
+				<section data-markdown class="center">
+					<script type="text/template">
+						### Алгебраическая форма комплексного числа.<br> Пример
+						Записать число $z=\frac{3+i}{5}$ в алгеброической форме. Определить,
+						чему равны мнимая и действительная части.<br>
+						<b>Решение.</b> Почленно поделим дробь:<br>
+						$z=\frac{3+i}{5}=\frac{3}{5}+\frac{i}{5}=\frac{3}{5}+\frac{1}{5}i$<br>
+						
+					</script>
+				</section>
+				<section data-markdown class="center">
+					<script type="text/template">
+						### Алгебраическая форма комплексного числа.<br> Продолжение примера
+						<br>
+						Тогда<br>
+						Re$z=\frac{3}{5}$, Im$z=\frac{1}{5}$<br>
+						<b>Ответ.</b> $z=\frac{3}{5}+\frac{1}{5}i$, Re$z=\frac{3}{5}$, Im$z=\frac{1}{5}$
+					</script>
+				</section>
+				<section data-markdown class="center">
+					<script type="text/template">
+						### Тригонометрическая форма комплексного числа
+						Любое комплексное число (кроме нуля)<br> \\(z=a+bi\\) можно записать 
+						в виде: <br>\\(z=|z|\cdot(cosφ+i\cdot sinφ)\\),<br> где \\(|z|\\) – это 
+						модуль комплексного числа, а $φ$ – аргумент комплексного числа, 
+						называется тригонометрической формой комплексного числа.
+
+					</script>
+				</section>
+				<section data-markdown class="center">
+					<script type="text/template">
+						### Тригонометрическая форма комплексного числа<br> Пример<br>
+						Комплексное число $z=-i$ представить 
+						в тригонометрической форме.<br>
+						<b>Решение.</b> Для заданного числа действительная часть $a=0$, а мнимая часть $b=-1$.<br>
+						
+					</script>
+				</section>
+				<section data-markdown class="center">
+					<script type="text/template">
+						### Тригонометрическая форма комплексного числа<br> Продолжение примера
+						Тогда модуль этого числа<br>
+						$|z|=\sqrt{0^2+(-1)^2}=\sqrt{0+1}=1$,<br>
+						а аргумент<br>
+						$φ=\arctan\frac{-1}{0}=-\frac{\pi}{2}=\frac{3\pi}{2}$<br>
+						Отсюда получаем, что<br>
+						$z=1\cdot(\cos\frac{3\pi}{2}+i\sin\frac{3\pi}{2})=\cos\frac{3\pi}{2}+i\sin\frac{3\pi}{2}$<br>
+						<b>Ответ. </b>$z=cos\frac{3\pi}{2}+i\sin\frac{3\pi}{2}$
+					</script>
+				</section>
+				<section data-markdown class="center">
+					<script type="text/template">
+						### Показательная (экспоненциальная) форма комплексного числа
+						Экспоненциальной или показательной формой комплексного числа является выражение <br>\\(z = re^{iφ},\\) 
+						где $r = |z| = \sqrt{a^2 + b^2}$ - модуль комплексного числа, 
+						\\(e^{iφ}\\) является расширением показателя степени до случая, 
+						когда показатель является комплексным числом, где \\(e\\) - показатель, \\(i\\) - мнимая единица, 
+						$φ$ – аргумент комплексного числа.
+					</script>
+				</section>
+				<section data-markdown class="center">
+					<script type="text/template">
+						### Показательная (экспоненциальная) форма комплексного числа<br> Пример
+						Записать комплексное число $z=3-4i$
+						в показательной форме.<br>
+						<b>Решение.</b> Найдем модуль и аргумент заданного числа:<br>
+						$|z|=\sqrt{3^2+(-4)^2}=\sqrt{9+16}=\sqrt{25}=5$<br>
+						$φ=\arctan\frac{-4}{3}=-\arctan\frac{4}{3}$<br>
+						
+					</script>
+				</section>
+				<section data-markdown class="center">
+					<script type="text/template">
+						### Показательная (экспоненциальная) форма комплексного числа<br> Продолжение примера
+						<br>
+						Тогда<br>
+						$z = |z|e^{iφ}=5e^{-i\arctan\frac{4}{3}}$<br>
+						<b>Ответ. </b>$z=5e^{-i\arctan\frac{4}{3}}$
+					</script>
+				</section>
+				<section data-markdown class="center">
+					<script type="text/template">
+						### Конвертации числа из алгебраической записи
+						<form action="" method="post">
+							<label><b>Алгебраическая запись</b></label><br>
+							<label for="a">Введите коэффициенты а </label><input id="a" value="3"/>
+							<label for="b"> b </label><input id="b" value="3"/><br>
+							<input type="button" id="sub" value="Kонвертировать"><br>
+							<label for="trig"><b>Тригонометрическая запись</b></label><br>
+							<output type="text" name="trig" id="trig"></output><br>
+							<label for="poc"><b>Показательная запись</b></label><br>
+							<output type="text" name="poc" id="poc"></output><br><br><br>
+							
+						</form>
+					</script>
+				</section>
+				<section data-markdown class="center">
+					<script type="text/template">
+						## Код программы
+						```
+						document.querySelector('#sub').onclick = () => {
+							let a = document.querySelector("#a");
+							let b = document.querySelector("#b");
+							let modz = Math.sqrt(Math.pow(a.value,2)+Math.pow(b.value,2));
+							let fi = Math.atan(b.value/a.value);
+							let trig = document.querySelector("#trig");
+							let poc = document.querySelector("#poc");
+							trig.innerHTML = katex.renderToString('z = \\sqrt{'+a.value+'^2+'+b.value+
+							'^2}\\cdot(\\cos\\frac{'+b.value+'}{'+a.value+'} + i\\sin\\frac{'+b.value+'}{'
+							+a.value+'})');
+							poc.innerHTML = katex.renderToString('z = \\sqrt{'+a.value+'^2+'+b.value+
+							'^2}\\cdot e^{i\\frac{'+b.value+'}{'+a.value+'}}');
+						}
+						```
+					</script>
+				</section>
+				
+				<section data-markdown class="center">
+					<script type="text/template">
+						## Комплексная плоскость<br> Геометрическое представление комплексного числа
+					</script>
+
+				</section>
+				<section data-markdown class="center">
+					<script type="text/template">
+						### Комплексная плоскость <br> Геометрическое представление комплексного числа
+						Комплексные числа изображаются на так называемой комплексной плоскости. 
+						Ось, соответствующая в прямоугольной декартовой системе координат оси абсцисс, 
+						называется действительной осью, а оси ординат - мнимой осью (рис. 1).
+					</script>
+				</section>
+				<section data-markdown class="center">
+					<script type="text/template">
+						
+						<img src="рис 1.jpeg" alt="1">
+					</script>
+				</section>
+				<section data-markdown class="center">
+					<script type="text/template">
+						### Комплексная плоскость<br> Геометрическое представление комплексного числа
+						Комплексному числу \\(z=a+bi\\) будет однозначно соответствовать на комплексной плоскости точка \\((a;b): 
+						z=a+bi \leftrightarrow (a;b)\\) <br>(рис. 2). То есть на действительной оси откладывается действительная часть 
+						комплексного числа, а на мнимой - мнимая.
+						
+					</script>
+				</section>
+				<section data-markdown class="center">
+					<script type="text/template">
+						
+						<img src="рис 2.png" alt="2">
+					</script>
+				</section>
+				<section data-markdown class="center">
+					<script type="text/template">
+						## Сложение, вычитание, умножение, деление комплексных чисел (формулы и примеры)
+					</script>
+				</section>
+				<section data-markdown class="center">
+					<script type="text/template">
+						### Oперации сложения и вычитания комплексных чисел<br>
+						Даны два комплексных числа $a_1+ib_1, a_2+ib_2$ тогда их сумма и разность 
+						можно представить в виде формул:<br>
+						$(a_1+ib_1)+ (a_2+ib_2)=(a_1+a_2)+i(b_1+b_2)$<br>
+						$(a_1+ib_1)- (a_2+ib_2)=(a_1-a_2)+i(b_1-b_2)$
+					</script>
+				</section>
+				<section data-markdown class="center">
+					<script type="text/template">
+						### Oперации сложения и вычитания комплексных чисел<br> Пример сложения<br>
+						Сложить комплексные числа $2+3i$ и $3+2i$.<br>
+						<b>Решение.</b> Для сложения чисел производим следующие вычисления:<br>
+						$(2+3i)+(3+2i)=(2+3)+i(3+2)=5+i5$<br><br>
+					</script>
+				</section>
+				<section data-markdown class="center">
+					<script type="text/template">
+						### Oперации сложения и вычитания комплексных чисел<br> Пример вычитания<br>
+						Из комплексного числа $2+3i$ вычесть $3+2i$.<br>
+						<b>Решение.</b> Для вычитания чисел производим следующие вычисления:<br>
+						$(2+3i)-(3+2i)=(2-3)+i(3-2)=-1+i$
+					</script>
+				</section>
+				<section data-markdown class="center">
+					<script type="text/template">
+						###  Операции умножения комплексных чисел 
+						При умножении двух комплексных чисел $a_1+ib_1$ и $a_2+ib_2$ получается выражение<br>
+						$(a_1+ib_1)\cdot(a_2+ib_2)=a_1b_1-a_2b_2+i(a_1b_2+a_2b_1)$<br>
+						
+					</script>
+				</section>
+				<section data-markdown class="center">
+					<script type="text/template">
+						###  Операции умножения комплексных чисел <br> Пример
+						Перемножить комплексные числа $2+i$ вычесть $1+2i$.<br>
+						<b>Решение.</b> Для вычитания чисел производим следующие вычисления:<br>
+						$(2+i)\cdot(1+2i)=2\cdot1-1\cdot2+i(2\cdot2+1\cdot1)=5i$
+						
+					</script>
+				</section>
+				<section data-markdown class="center">
+					<script type="text/template">
+						###  Операции деления комплексных чисел <br>
+						Как и при любом делении в алгебре, комплексное число нельзя делить 
+						на нуль и на комплексное число $0 + i0$.<br>
+						При делении комплексного числа на действительное число на это число нужно 
+						разделить и действительную, и мнимую компоненты. При делении комплексного 
+						числа на комплексное число нужно делимое и делитель умножить на число, сопряжённое делителю.
+
+					</script>				
+				</section>
+				<section data-markdown class="center">
+					<script type="text/template">
+						###  Операции деления комплексных чисел <br> Пример
+						Разделить комплексное число $3+4i$ на комплексное число $2+i$.<br>
+						<b>Решение.</b> Умножив числитель и знаменатель дроби $\frac{3+4i}{2+i}$ на $2-i$ , получаем:<br>
+						$\frac{(3+4i)(2-i)}{(2+i)(2-i)}=\frac{10+5i}{4-i^2}=\frac{10+5i}{5}=2+i$
+					</script>				
+				</section>
+				<section data-markdown class="center">
+					<script type="text/template">
+						### Операции над комплексными числами
+						<form action="" method="post">
+							<label><b>Первое число</b></label><br>
+							<label for="a1">Введите коэффициенты а </label><input id="a1" value="2"/>
+							<label for="b1"> b </label><input id="b1" value="3"/><br>
+							<label><b>Второе число</b></label><br>
+							<label for="a2">Введите коэффициенты а </label><input id="a2" value="3"/>
+							<label for="b2"> b </label><input id="b2" value="1"/><br>
+							<label for="operator_btns">Выберите операцию </label>
+							<div id="operator_btns">
+								<input type="button" id="pl" value="+">
+								<input type="button" id="min" value="-">
+								<input type="button" id="um" value="*">
+								<input type="button" id="del" value=":"><br>
+							</div>
+							<label>Результат</label><br>
+							<output type="text" name="it" id="it"></output><br><br><br>
+
+							
+						</form>
+						
+					</script>
+				</section>
+				<section data-markdown class="center">
+					<script type="text/template">
+						## Код программы
+						```
+						document.querySelector('#pl').onclick = () =>  {
+							let result;
+							var a1 = Number(document.getElementById("a1").value);
+							var a2 = Number(document.getElementById("a2").value);
+							var b1 = Number(document.getElementById("b1").value);
+							var b2 = Number(document.getElementById("b2").value);
+							it.value = a1 + a2+"+"+ (b1 + b2)+" i";
+							let a=a1+a2;
+							let b= b1+b2;
+							it.innerHTML = katex.renderToString(a+'+'+b+' i');
+						  }
+						  document.querySelector('#min').onclick = () =>  {
+							let result;
+							var a1 = Number(document.getElementById("a1").value);
+							var a2 = Number(document.getElementById("a2").value);
+							var b1 = Number(document.getElementById("b1").value);
+							var b2 = Number(document.getElementById("b2").value);
+							it.value = a1 - a2+"+"+ (b1 - b2)+" i";
+							let a=a1-a2;
+							let b= b1-b2;
+							it.innerHTML = katex.renderToString(a+'+'+b+' i');
+						  }
+						  document.querySelector('#um').onclick = () =>  {
+							let result;
+							var a1 = Number(document.getElementById("a1").value);
+							var a2 = Number(document.getElementById("a2").value);
+							var b1 = Number(document.getElementById("b1").value);
+							var b2 = Number(document.getElementById("b2").value);
+							let a=a1*b1-a2*b2;
+							let b= a1*b2+a2*b1;
+							it.innerHTML = katex.renderToString(a+'+'+b+' i');
+						  }
+						  document.querySelector('#del').onclick = () =>  {
+							let result;
+							var a1 = Number(document.getElementById("a1").value);
+							var a2 = Number(document.getElementById("a2").value);
+							var b1 = Number(document.getElementById("b1").value);
+							var b2 = -Number(document.getElementById("b2").value);
+							let a=a1*b1-a2*b2;
+							let b= a1*b2+a2*b1;
+							let c=a2^a2+b2^b2;
+							it.innerHTML = katex.renderToString('\\frac{'+a+'+'+b+' i}{'+c+'}');
+						  }
+						```
+					</script>
+				</section>
+				<section data-markdown class="center">
+					<script type="text/template">
+						<img src="i.jpg" id="karp1" alt="kar1">
+					</script>
+				</section>
+				<section data-markdown class="center">
+					<script type="text/template">
+						<img src="kor i.jpg" id="karp1" alt="kar2">
+					</script>
+				</section>
+				<section data-markdown class="center">
+					<script type="text/template">
+						<img src="мы с тамарой.jpg" id="karp2" alt="kar3">
+					</script>
+				</section>
+				
+				</section>
+				<section data-markdown class="center">
+					<script type="text/template">
+						### Cпасибо за просмотр
+
+						/* чмок-чмок */
+					</script>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/math/math.js"></script>
+
+		<script>
+			Reveal.initialize({
+				hash: true,
+				center: false,
+				slideNumber: true,
+				controls:true,
+				
+				
+				// save slide
+				history: true,
+				slideNumber: true,
+				touch: true,
+				menu: {
+					side: 'left', //Расположение меню
+					numbers: true, //Нумерация слайдов
+					markers: true, //Маркер посещения
+					titleSelector: 'h1, h2, h3, h4, h5, h6', //Заголовки, отображаемые в меню
+					useTextContentForMissingTitles: true, //Если заголовка нет, то подставляем первые слова слайда
+					hideMissingTitles: false, //Если заголовка нет, то скрываем слайд из меню
+					transitions: true, //Установить меню анимации
+					openButton: true, //Скрыть кнопку меню
+					keyboard: true, //Открытие меню по кнопке m
+				},
+				dependencies:[
+					{
+						scr:'plugin/menu/menu.js'
+					},{ 
+						//Menu
+						src: 'plugin/menu/menu.js',
+						async: true
+					}
+				],
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+			});
+		</script>
+		<script>
+			window.onload = () => {
+				document.querySelector('#sub').onclick = () => {
+					let a = document.querySelector("#a");
+					let b = document.querySelector("#b");
+					let modz = Math.sqrt(Math.pow(a.value,2)+Math.pow(b.value,2));
+					let fi = Math.atan(b.value/a.value);
+					let trig = document.querySelector("#trig");
+					let poc = document.querySelector("#poc");
+					trig.innerHTML = katex.renderToString('z = \\sqrt{'+a.value+'^2+'+b.value+
+					'^2}\\cdot(\\cos\\frac{'+b.value+'}{'+a.value+'} + i\\sin\\frac{'+b.value+'}{'
+					+a.value+'})');
+					poc.innerHTML = katex.renderToString('z = \\sqrt{'+a.value+'^2+'+b.value+
+					'^2}\\cdot e^{i\\frac{'+b.value+'}{'+a.value+'}}');
+				}
+
+
+				document.querySelector('#pl').onclick = () =>  {
+    				let result;
+    				var a1 = Number(document.getElementById("a1").value);
+    				var a2 = Number(document.getElementById("a2").value);
+					var b1 = Number(document.getElementById("b1").value);
+    				var b2 = Number(document.getElementById("b2").value);
+					it.value = a1 + a2+"+"+ (b1 + b2)+" i";
+					let a=a1+a2;
+					let b= b1+b2;
+					it.innerHTML = katex.renderToString(a+'+'+b+' i');
+  				}
+				  document.querySelector('#min').onclick = () =>  {
+    				let result;
+    				var a1 = Number(document.getElementById("a1").value);
+    				var a2 = Number(document.getElementById("a2").value);
+					var b1 = Number(document.getElementById("b1").value);
+    				var b2 = Number(document.getElementById("b2").value);
+					it.value = a1 - a2+"+"+ (b1 - b2)+" i";
+					let a=a1-a2;
+					let b= b1-b2;
+					it.innerHTML = katex.renderToString(a+'+'+b+' i');
+  				}
+				  document.querySelector('#um').onclick = () =>  {
+    				let result;
+    				var a1 = Number(document.getElementById("a1").value);
+    				var a2 = Number(document.getElementById("a2").value);
+					var b1 = Number(document.getElementById("b1").value);
+    				var b2 = Number(document.getElementById("b2").value);
+					let a=a1*b1-a2*b2;
+					let b= a1*b2+a2*b1;
+					it.innerHTML = katex.renderToString(a+'+'+b+' i');
+  				}
+				  document.querySelector('#del').onclick = () =>  {
+    				let result;
+    				var a1 = Number(document.getElementById("a1").value);
+    				var a2 = Number(document.getElementById("a2").value);
+					var b1 = Number(document.getElementById("b1").value);
+    				var b2 = -Number(document.getElementById("b2").value);
+					let a=a1*b1-a2*b2;
+					let b= a1*b2+a2*b1;
+					let c=a2^a2+b2^b2;
+					it.innerHTML = katex.renderToString('\\frac{'+a+'+'+b+' i}{'+c+'}');
+  				}
+			}
+		</script>
+	</body>
+</html>
