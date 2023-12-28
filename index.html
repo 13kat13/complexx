@@ -29,6 +29,18 @@
 			#sub{
 				width: 40%; height:80%;background-color:rgb(157, 202, 176);font-size: 20pt;
 			}
+			#pl{
+				width: 7%; height:80%;background-color:rgb(157, 202, 176);font-size: 20pt;
+			}
+			#min{
+				width: 7%; height:80%;background-color:rgb(157, 202, 176);font-size: 20pt;
+			}
+			#um{
+				width: 7%; height:80%;background-color:rgb(157, 202, 176);font-size: 20pt;
+			}
+			#del{
+				width: 7%; height:80%;background-color:rgb(157, 202, 176);font-size: 20pt;
+			}
 			#karp1{
 				width: 100%;
 			}
@@ -177,10 +189,10 @@
 							let trig = document.querySelector("#trig");
 							let poc = document.querySelector("#poc");
 							trig.innerHTML = katex.renderToString('z = \\sqrt{'+a.value+'^2+'+b.value+
-							'^2}\\cdot(\\cos\\frac{'+b.value+'}{'+a.value+'} + i\\sin\\frac{'+b.value+'}{'
-							+a.value+'})');
+							'^2}\\cdot(\\cos(\\arctan\\frac{'+b.value+'}{'+a.value+'}) + i\\sin(\\arctan\\frac{'+b.value+'}{'
+							+a.value+'}))');
 							poc.innerHTML = katex.renderToString('z = \\sqrt{'+a.value+'^2+'+b.value+
-							'^2}\\cdot e^{i\\frac{'+b.value+'}{'+a.value+'}}');
+							'^2}\\cdot e^{i\\cdot\\arctan\\frac{'+b.value+'}{'+a.value+'}}');
 						}
 						```
 					</script>
@@ -297,14 +309,14 @@
 							<label><b>Второе число</b></label><br>
 							<label for="a2">Введите коэффициенты а </label><input id="a2" value="3"/>
 							<label for="b2"> b </label><input id="b2" value="1"/><br>
-							<label for="operator_btns">Выберите операцию </label>
+							<label for="operator_btns"><b>Выберите операцию </b></label>
 							<div id="operator_btns">
-								<input type="button" id="pl" value="+">
+								<label>Первое число </label><input type="button" id="pl" value="+">
 								<input type="button" id="min" value="-">
 								<input type="button" id="um" value="*">
-								<input type="button" id="del" value=":"><br>
+								<input type="button" id="del" value=":"><label> Второе число</label><br>
 							</div>
-							<label>Результат</label><br>
+							<label><b>Результат</b></label><br>
 							<output type="text" name="it" id="it"></output><br><br><br>
 
 							
@@ -443,10 +455,10 @@
 					let trig = document.querySelector("#trig");
 					let poc = document.querySelector("#poc");
 					trig.innerHTML = katex.renderToString('z = \\sqrt{'+a.value+'^2+'+b.value+
-					'^2}\\cdot(\\cos\\frac{'+b.value+'}{'+a.value+'} + i\\sin\\frac{'+b.value+'}{'
-					+a.value+'})');
+					'^2}\\cdot(\\cos(\\arctan\\frac{'+b.value+'}{'+a.value+'}) + i\\sin(\\arctan\\frac{'+b.value+'}{'
+					+a.value+'}))');
 					poc.innerHTML = katex.renderToString('z = \\sqrt{'+a.value+'^2+'+b.value+
-					'^2}\\cdot e^{i\\frac{'+b.value+'}{'+a.value+'}}');
+					'^2}\\cdot e^{i\\cdot\\arctan\\frac{'+b.value+'}{'+a.value+'}}');
 				}
 
 
